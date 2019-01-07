@@ -22,4 +22,19 @@ sudo systemctl enable docker
 sudo systemctl start docker
 ```
 
+### Login to AWS ECR
 
+```sh
+aws ecr get-login --no-include-email --region eu-west-1
+```
+It will output a new command like following.
+
+```sh
+docker login -u AWS -p XXXXXXX== https://1111111111.ecr.eu-west-1.amazonaws.com
+```
+
+Single Command Line to Login
+
+```sh
+eval $(aws ecr get-login --no-include-email --region eu-west-1)
+```
